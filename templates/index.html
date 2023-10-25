@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Verdana's Phishing Email Detector</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #3498db, #e74c3c); /* Gradient background */
+            color: #fff; /* White text color */
+            font-family: 'Verdana', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
 
+        header {
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay on the header */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        form {
+            margin-top: 20px;
+            width: 80%;
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background for the form */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            color: #333; /* Dark gray label color */
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: 'Verdana', sans-serif;
+            font-size: 16px;
+        }
+
+        input[type="submit"], input[type="reset"] {
+            background-color: #e74c3c; /* Red submit button */
+            color: #fff;
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        input[type="reset"] {
+            margin-left: 10px;
+            background-color: #2ecc71; /* Green reset button */
+        }
+
+        p {
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Team Verdana's Phishing Email Detector</h1>
+    </header>
+    <form action="/" method="post">
+        <label for="email">Enter an email:</label>
+        <textarea name="email" id="email" rows="4" cols="50" placeholder="Type your email here..."></textarea>
+        <br>
+        <input type="submit" value="Classify">
+        <input type="reset" value="Reset">
+    </form>
+    {% if prediction %}
+        <p>{{ prediction }}</p>
+    {% endif %}
+</body>
+</html>
